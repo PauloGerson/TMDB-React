@@ -70,19 +70,36 @@ export const Container = styled.div`
         .movie{
             display: flex;
             flex-direction: column;
+            
             .details{
                
               display: flex ;
               flex-direction: column;
+              
               width: 70rem;
               text-align: justify;
 
               span{
-                width: 23rem;
+                width: 80%;
+                margin: 1rem 5rem 3rem 2rem;
+              }
+              h2{
+                width: 80%;
+                margin-right: 3rem;
+                margin-bottom: 2rem;
               }
    
             }
+            img{
+                max-width: 20%;              
+              }
+             
+
+              button{
+                margin-right: 3rem;
+              }
         }
+        
     }
 
 `
