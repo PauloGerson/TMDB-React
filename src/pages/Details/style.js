@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
     font-family: 'DM Sans', sans-serif;
     margin: 2rem 4rem;
-    height: 100vh;
+  
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,6 +11,7 @@ export const Container = styled.div`
 
     h2{
         margin: 3rem o;
+        text-align: center;
     }
 
     .movie{
@@ -32,6 +33,8 @@ export const Container = styled.div`
         align-items: flex-start;
         margin-left: 3rem;
         max-width: 30%;
+        margin-top: 2rem;
+        align-items: center;
 
     }
     button{
@@ -56,10 +59,30 @@ export const Container = styled.div`
         font-weight: 300;
         margin: 1rem 0rem;
         font-size: 110%;
+      
     }
 
     .release-date{
         opacity: 0.5;
+    }
+
+    @media(max-width: 720px){
+        .movie{
+            display: flex;
+            flex-direction: column;
+            .details{
+               
+              display: flex ;
+              flex-direction: column;
+              width: 70rem;
+              text-align: justify;
+
+              span{
+                width: 23rem;
+              }
+   
+            }
+        }
     }
 
 `
