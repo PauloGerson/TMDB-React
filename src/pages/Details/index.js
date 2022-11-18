@@ -6,28 +6,35 @@ import { Link } from "react-router-dom";
 
 
 
+setInterval(function(){
+  Details()
+}, 1000)
+
 function Details(){
     const {id} = useParams();
 
     const [movie, setMovies] = useState({});
     const imgUrl = `https://image.tmdb.org/t/p/w500`
 
-    useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${apyKey}&language=en-US`)
-        .then(results => results.json())
-        .then(data => {
+    useEffect( () => {
 
-            const {title, poster_path, overview, release_date} = data;
-            const movie ={
-                id,
-                title,
-                sinopse: overview,
-                image: `${imgUrl}${poster_path}`,
-                releaseDate: release_date
-            }
-            console.log(movie)
-            setMovies(movie)
+        fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${apyKey}&language=en-US`)
+        .then(baseUrl => baseUrl.json())
+        .then(urlJson =>{
+            console.log(urlJson)     
+            const {title, poster_path, overview, release_date} = urlJson;
+           const movie ={
+               id,
+               title,
+               sinopse: overview,
+               image: `${imgUrl}${poster_path}`,
+               releaseDate: release_date
+           } 
+           console.log(movie)
+           setMovies(movie)
+     
         })
+       
     }, [id])
     
     return(
